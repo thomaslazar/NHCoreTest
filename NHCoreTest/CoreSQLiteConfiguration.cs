@@ -22,20 +22,13 @@ namespace NHCoreTest
         {
             Raw("connection.release_mode", "on_close");
             return ConnectionString(c => c
-                .Is("Data Source=:memory:;Version=3;New=True;"));
-
+                                    .Is("Data Source=:memory:;Mode=Memory;Cache=Shared"));
         }
 
         public CoreSQLiteConfiguration UsingFile(string fileName)
         {
             return ConnectionString(c => c
-                .Is(string.Format("Data Source={0};Version=3;New=True;", fileName)));
-        }
-
-        public CoreSQLiteConfiguration UsingFileWithPassword(string fileName, string password)
-        {
-            return ConnectionString(c => c
-                .Is(string.Format("Data Source={0};Version=3;New=True;Password={1};", fileName, password)));
+                .Is(string.Format("Data Source={0};Cache=Shared", fileName)));
         }
     }
 }
