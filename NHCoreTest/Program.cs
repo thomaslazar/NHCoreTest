@@ -14,7 +14,7 @@ namespace NHCoreTest
         private static ISessionFactory CreateSessionFactory() {
             return Fluently.Configure()
                            .Database(
-                              CoreSQLiteConfiguration.Standard
+                              MicrosoftCoreSQLiteConfiguration.Standard
                                .UsingFile("nhcoretest.db")
                               )
                            .Mappings(m => m.FluentMappings.AddFromAssemblyOf<Program>())

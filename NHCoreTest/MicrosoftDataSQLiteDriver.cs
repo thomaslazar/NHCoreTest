@@ -3,9 +3,9 @@ using Microsoft.Data.Sqlite;
 
 namespace NHCoreTest
 {
-    public class CoreSQLiteDriver : NHibernate.Driver.ReflectionBasedDriver  
+    public class MicrosoftDataSQLiteDriver : NHibernate.Driver.ReflectionBasedDriver  
 {  
-        public CoreSQLiteDriver() 
+        public MicrosoftDataSQLiteDriver() 
             : base(
                 "Microsoft.Data.Sqlite",
                 "Microsoft.Data.Sqlite",  
